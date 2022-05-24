@@ -1,0 +1,16 @@
+}
+> use employee
+switched to db employee
+> db.empl.insert({empno:"101",name:"Albin",salary:"12000",role:"team leader"})
+WriteResult({ "nInserted" : 1 })
+
+> db.empl.insert({empno:"102",name:"Aamy",salary:"10000",role:"team member"})
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({empno:"103",name:"christya",salary:"10000",role:"team member"}
+)
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({empno:"104",name:"chris",salary:"12000",role:"team leader"})
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({empno:"105",name:"ebines",salary:"10000",role:"team member"})
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({empno:"105",name:"ebines",salary:"10000",role:"manager"})

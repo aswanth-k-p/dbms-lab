@@ -1,0 +1,62 @@
+> use mydb
+switched to db mydb
+> db
+mydb
+> show dbs
+local  0.078GB
+> db.mycollections.insert({"name":"me"})
+WriteResult({ "nInserted" : 1 })
+> show dbs
+local  0.078GB
+mydb   0.078GB
+> show collections
+mycollections
+system.indexes
+> db.mycollections.drop()
+true
+> show collections
+system.indexes
+> db.dropDatabase()
+{ "dropped" : "mydb", "ok" : 1 }
+
+
+> use mydb
+switched to db mydb
+> db.school.insertMany([{"stdid":"102","std":"anu"},{"stdid":"113","std":"ashlin"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("6283317c49587634984b9f5a"),
+                ObjectId("6283317c49587634984b9f5b")
+        ]
+} 
+}
+> db.school.find()
+{ "_id" : ObjectId("6283320b49587634984b9f5c"), "stdid" : "102", "std" : "anu" }
+
+{ "_id" : ObjectId("6283320b49587634984b9f5d"), "stdid" : "113", "std" : "ashlin
+" }
+> db.school.find().pretty()
+{
+        "_id" : ObjectId("6283320b49587634984b9f5c"),
+        "stdid" : "102",
+        "std" : "anu"
+}
+{
+        "_id" : ObjectId("6283320b49587634984b9f5d"),
+        "stdid" : "113",
+        "std" : "ashlin"
+}
+> db.school.update({"stdid":"102"},{$set:{"stdid":"101"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.school.find().pretty()
+{
+        "_id" : ObjectId("6283320b49587634984b9f5c"),
+        "stdid" : "101",
+        "std" : "anu"
+}
+{
+        "_id" : ObjectId("6283320b49587634984b9f5d"),
+        "stdid" : "113",
+        "std" : "ashlin"
+}

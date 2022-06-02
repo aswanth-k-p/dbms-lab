@@ -1,0 +1,106 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Users\Administrator>mongo
+2022-05-24T09:42:56.744+0530 I CONTROL  [main] Hotfix KB2731284 or later update
+is not installed, will zero-out data files
+MongoDB shell version: 3.2.21-2-g105acca0d4
+connecting to: test
+Server has startup warnings:
+2022-05-24T09:42:45.623+0530 I CONTROL  [initandlisten]
+2022-05-24T09:42:45.623+0530 I CONTROL  [initandlisten] ** WARNING: This 32-bit
+MongoDB binary is deprecated
+2022-05-24T09:42:45.624+0530 I CONTROL  [initandlisten]
+2022-05-24T09:42:45.625+0530 I CONTROL  [initandlisten]
+2022-05-24T09:42:45.625+0530 I CONTROL  [initandlisten] ** NOTE: This is a 32 bi
+t MongoDB binary.
+2022-05-24T09:42:45.625+0530 I CONTROL  [initandlisten] **       32 bit builds a
+re limited to less than 2GB of data (or less with --journal).
+2022-05-24T09:42:45.626+0530 I CONTROL  [initandlisten] **       Note that journ
+aling defaults to off for 32 bit and is currently off.
+2022-05-24T09:42:45.627+0530 I CONTROL  [initandlisten] **       See http://doch
+ub.mongodb.org/core/32bit
+2022-05-24T09:42:45.628+0530 I CONTROL  [initandlisten]
+> use movie
+switched to db movie
+> db
+movie
+> db.createCollection("moviedetails")
+{ "ok" : 1 }
+> show collections
+moviedetails
+system.indexes
+> db.moviedetails.insert({name:"Fight club", writer:"Chuck Palahniuk",year:"1999
+",actors:["Brad Pitt","Edward Norton"]})
+WriteResult({ "nInserted" : 1 })
+> db.moviedetails.insert({name:"Pulp Fiction", writer:"Quentin Tarantino",year:"
+1994",actors:["John Travolta","Uma Thurman"]})
+WriteResult({ "nInserted" : 1 })
+> db.moviedetails.insert({name:"The Hobbit: An Unexpected Journey", writer:"J.R.
+R Tolkein",year:"2012",franchise:"The Hobbit"})
+WriteResult({ "nInserted" : 1 })
+> db.moviedetails.insert({name:"The Hobbit: The Desolation of Smaug", writer:"J.
+R.R Tolkein",year:"2013",franchise:"The Hobbit"})
+WriteResult({ "nInserted" : 1 })
+
+> db.moviedetails.insert({name:"The Hobbit: The Battle of the Five Armies", writ
+er:"J.R.R Tolkein",year:"2012",franchise:"The Hobbit",synopsis:"Bilbo and Compan
+y are forced to engage in a war against an array of combatants and keep a lonele
+y Mountain from falling into the hands of rising darkness"})
+WriteResult({ "nInserted" : 1 })
+> db.moviedetails.insert({name:"Pee Wee Hermans Big Adventure"})
+WriteResult({ "nInserted" : 1 })
+> db.moviedetails.insert({name:"Avatar"})
+WriteResult({ "nInserted" : 1 })
+
+> db.moviedetails.find().pretty()
+{
+        "_id" : ObjectId("628c60b5c8aff8f8498b954a"),
+        "name" : "Fight club",
+        "writer" : "Chuck Palahniuk",
+        "year" : "1999",
+        "actors" : 
+                "Brad Pitt",
+                "Edward Norton"
+        ]
+}
+{
+        "_id" : ObjectId("628c612ac8aff8f8498b954b"),
+        "name" : "Pulp Fiction",
+        "writer" : "Quentin Tarantino",
+        "year" : "1994",
+        "actors" : [
+                "John Travolta",
+                "Uma Thurman"
+        ]
+}
+{
+        "_id" : ObjectId("628c61c9c8aff8f8498b954c"),
+        "name" : "The Hobbit: An Unexpected Journey",
+        "writer" : "J.R.R Tolkein",
+        "year" : "2012",
+        "franchise" : "The Hobbit"
+}
+{
+        "_id" : ObjectId("628c621bc8aff8f8498b954d"),
+        "name" : "The Hobbit: The Desolation of Smaug",
+        "writer" : "J.R.R Tolkein",
+        "year" : "2013",
+        "franchise" : "The Hobbit"
+}
+{
+        "_id" : ObjectId("628c63b3c8aff8f8498b954f"),
+        "name" : "The Hobbit: The Battle of the Five Armies",
+        "writer" : "J.R.R Tolkein",
+        "year" : "2012",
+        "franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and Company are forced to engage in a war against an
+ array of combatants and keep a loneley Mountain from falling into the hands of
+rising darkness"
+}
+{
+        "_id" : ObjectId("628c6405c8aff8f8498b9550"),
+        "name" : "Pee Wee Hermans Big Adventure"
+}
+{ "_id" : ObjectId("628c640ec8aff8f8498b9551"), "name" : "Avatar" }
+>

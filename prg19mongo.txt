@@ -1,0 +1,55 @@
+}
+> use employee
+switched to db employee
+> db.empl.insert({empno:"101",name:"Albin",salary:"12000",role:"team leader"})
+WriteResult({ "nInserted" : 1 })
+
+> db.empl.insert({empno:"102",name:"Aamy",salary:"10000",role:"team member"})
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({empno:"103",name:"christya",salary:"10000",role:"team member"}
+)
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({empno:"104",name:"chris",salary:"12000",role:"team leader"})
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({empno:"105",name:"ebines",salary:"10000",role:"team member"})
+WriteResult({ "nInserted" : 1 })
+> db.empl.insert({empno:"105",name:"ebines",salary:"10000",role:"manager"})
+WriteResult({ "nInserted" : 1 })
+>db.empl.find().pretty()
+
+{
+        "_id" : ObjectId("62833c0b49587634984b9f60"),
+        "empno" : "101",
+        "name" : "Albin",
+        "salary" : "12000",
+        "role" : "team leader"
+}
+{
+        "_id" : ObjectId("62833d7049587634984b9f61"),
+        "empno" : "102",
+        "name" : "Aamy",
+        "salary" : "10000",
+        "role" : "team member"
+}
+{
+        "_id" : ObjectId("62833d9149587634984b9f62"),
+        "empno" : "103",
+        "name" : "christya",
+        "salary" : "10000",
+        "role" : "team member"
+}
+{
+        "_id" : ObjectId("62833de549587634984b9f63"),
+        "empno" : "104",
+        "name" : "chris",
+        "salary" : "12000",
+        "role" : "team leader"
+}
+{
+        "_id" : ObjectId("62833e7749587634984b9f64"),
+        "empno" : "105",
+        "name" : "ebines",
+        "salary" : "10000",
+        "role" : "team member"
+}
+>
